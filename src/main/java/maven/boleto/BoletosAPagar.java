@@ -17,7 +17,7 @@ public class BoletosAPagar implements Vizualizar {
 	LocalDate amanha = LocalDate.of(hoje.getYear(), hoje.getMonth(), hoje.lengthOfMonth());
 
 
-	public void vizualizar(String usuario, int mes) throws SQLException {
+	public List<Boleto> vizualizar(String usuario, int mes) throws SQLException {
 		Tabela.criarDbeTabela(usuario);
 		hoje2 = LocalDate.of(hoje.getYear(), mes, 1);
 		amanha = LocalDate.of(hoje.getYear(), mes, hoje.lengthOfMonth());
@@ -27,8 +27,9 @@ public class BoletosAPagar implements Vizualizar {
 				+ " where paga=0 and vencimento" + "  between '" + hoje2 + "'  AND  '" + amanha + "' ";
 	
 
-		List<Boleto> boletos= AlimentarListaBoletos.alimentarListaBoletoos(usuario, sql, mes);
+		List<Boleto> boletos= AlimentarListaBoletos.alimentarListaBoletos( sql);
 		ImprimirLista.imprimirLista(boletos);
+		return boletos;
 	}
 
 	

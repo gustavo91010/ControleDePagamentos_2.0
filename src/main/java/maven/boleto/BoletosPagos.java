@@ -3,6 +3,7 @@ package maven.boleto;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 
 import maven.infra.AlimentarListaBoletos;
 import maven.infra.Conexao;
@@ -13,7 +14,7 @@ public class BoletosPagos implements Vizualizar {
 	LocalDate hoje = LocalDate.now();
 	BoletosAPagar contMes = new BoletosAPagar();
 
-	public void vizualizar(String usuario, int mes) throws SQLException {
+	public List<Boleto> vizualizar(String usuario, int mes) throws SQLException {
 
 		LocalDate hoje2 = LocalDate.of(hoje.getYear(), mes, 1);
 
@@ -22,8 +23,9 @@ public class BoletosPagos implements Vizualizar {
 		String consultaMes = "SELECT id, descricao, valor, vencimento from" + " controle_de_contas.CDC_" + usuario
 				+ " where paga =1";
 
-		ImprimirLista.imprimirLista(
-				AlimentarListaBoletos.alimentarListaBoletoos(usuario, consultaMes, hoje.getMonthValue()));
+		List<Boleto> boletos= AlimentarListaBoletos.alimentarListaBoletos(consultaMes);
+		ImprimirLista.imprimirLista(boletos);
+		return boletos;
 
 	}
 

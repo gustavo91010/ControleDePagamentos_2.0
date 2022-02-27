@@ -23,7 +23,7 @@ public class PagarBoletos  {
 		String sql = "SELECT id, descricao, valor, vencimento from controle_de_contas.CDC_" + usuario
 				+ " where paga =0 and vencimento between CAST('" + hoje2 + "' AS DATE) AND CAST( '" + amanha
 				+ "' AS DATE);";
-		List<Boleto> boletos= AlimentarListaBoletos.alimentarListaBoletoos(usuario, sql, id);
+		List<Boleto> boletos= AlimentarListaBoletos.alimentarListaBoletos( sql);
 
 		Tabela.criarDbeTabela(usuario);
 

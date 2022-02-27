@@ -13,8 +13,11 @@ public class Boleto {
 		// TODO Auto-generated constructor stub
 	}
 	
-
-	
+	public Boleto(String descricao, double valor, Date vencimento) {
+		this.descricao = descricao;
+		this.valor = valor;
+		this.vencimento = vencimento;
+	}
 
 
 	public Boleto(String descricao, double valor, Date vencimento, int indice) {
@@ -24,9 +27,6 @@ public class Boleto {
 		this.vencimento = vencimento;
 		this.indice = indice;
 	}
-
-
-
 
 
 	public String getDescricao() {

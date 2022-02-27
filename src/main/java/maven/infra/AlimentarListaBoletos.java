@@ -12,7 +12,7 @@ import maven.boleto.Boleto;
 public class AlimentarListaBoletos {
 	
 		
-		public static List<Boleto> alimentarListaBoletoos(String usuario, String sql, int mes) throws SQLException {
+		public static List<Boleto> alimentarListaBoletos( String sql) throws SQLException {
 			Date data;
 
 			Statement stmt = Conexao.getConexao().createStatement();

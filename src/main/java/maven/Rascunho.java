@@ -10,7 +10,7 @@ public class Rascunho {
 	
 	
 	LocalDate date= LocalDate.of(2018, 8,21);
-	System.out.println(date);
+	System.out.println(date);	
 	System.out.println(date.now());
 	System.out.println(LocalDate.now().getYear());
 	}
