@@ -1,8 +1,7 @@
 package maven.boleto;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
@@ -10,13 +9,14 @@ import java.util.List;
 import org.junit.Test;
 
 import maven.infra.Conexao;
-import maven.infra.ImprimirLista;
+import maven.infra.ExcluirTabela;
 import maven.infra.Tabela;
 
 public class ExcluirBoletosTest {
 
 	
 	
+
 	
 	@Test
 	public void deveraExcluirOBoletoSelecionado() throws SQLException {
@@ -26,13 +26,15 @@ public class ExcluirBoletosTest {
 				int d1 = d.getMonthValue();
 				String usuario = "TesteUnitarioExcluirBoleto";
 				int id = 0;
+				
+				
 
 				AdicionarBoletos add = new AdicionarBoletos();
 				ExcluirBoletos exc = new ExcluirBoletos();
 				BoletosAPagar vizu = new BoletosAPagar();
 
 				Conexao.getConexao();
-				Tabela.criarDbeTabela(usuario);
+				Tabela.criar(usuario);
 				
 				//Ação!
 				
@@ -40,11 +42,12 @@ public class ExcluirBoletosTest {
 				System.out.println();
 				add.adicionarContas(usuario, "Jujuba", 2, d1);
 				exc.excluirBoleto(usuario, id);
-				vizu.vizualizar(usuario, d1);
 
 				// Teste:
 				
 				assertTrue(boletos.size() == 0);
+				ExcluirTabela.excluir(usuario);
+
 	}
 
 }

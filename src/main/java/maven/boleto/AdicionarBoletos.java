@@ -12,7 +12,7 @@ public class AdicionarBoletos {
 	@SuppressWarnings("deprecation")
 	public void adicionarContas(String usuario, String descricao, double valor, int dia) throws SQLException {
 		
-		Tabela.criarDbeTabela(usuario);
+		Tabela.criar(usuario);
 
 		String inserirDados = "INSERT INTO  controle_de_contas.CDC_" + usuario
 				+ " (descricao, valor,Vencimento,Paga ) SELECT  ?,?,?,?" + " FROM DUAL"
@@ -39,7 +39,7 @@ public class AdicionarBoletos {
 	public void adicionarContas(String usuario, String descricao, double valor, int dia, int recorrencia)
 			throws SQLException {
 
-		Tabela.criarDbeTabela(usuario);
+		Tabela.criar(usuario);
 
 		String inserirDados = "INSERT INTO  controle_de_contas.CDC_" + usuario
 				+ " (descricao, valor,Vencimento,Paga ) SELECT  ?,?,?,?" + " FROM DUAL"

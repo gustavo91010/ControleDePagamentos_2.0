@@ -25,7 +25,7 @@ public class PagarBoletos  {
 				+ "' AS DATE);";
 		List<Boleto> boletos= AlimentarListaBoletos.alimentarListaBoletos( sql);
 
-		Tabela.criarDbeTabela(usuario);
+		Tabela.criar(usuario);
 
 		String update = "UPDATE controle_de_contas.CDC_" + usuario + " SET Paga =1 WHERE (id= ?)";
 		PreparedStatement stmt1 =Conexao.getConexao().prepareStatement(update);

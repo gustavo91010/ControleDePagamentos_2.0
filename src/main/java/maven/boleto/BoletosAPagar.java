@@ -7,7 +7,6 @@ import java.util.List;
 
 import maven.infra.AlimentarListaBoletos;
 import maven.infra.ImprimirLista;
-import maven.infra.Tabela;
 
 public class BoletosAPagar implements Vizualizar {
 
@@ -18,7 +17,7 @@ public class BoletosAPagar implements Vizualizar {
 
 
 	public List<Boleto> vizualizar(String usuario, int mes) throws SQLException {
-		Tabela.criarDbeTabela(usuario);
+//		Tabela.criar(usuario);
 		hoje2 = LocalDate.of(hoje.getYear(), mes, 1);
 		amanha = LocalDate.of(hoje.getYear(), mes, hoje.lengthOfMonth());
 

@@ -6,7 +6,7 @@ import java.sql.Statement;
 
 public class Tabela {
 	
-	public static void criarDbeTabela(String usuario) throws SQLException {
+	public static void criar(String usuario) throws SQLException {
 
 		String criarDBC = "CREATE DATABASE IF NOT EXISTS controle_de_contas";
 		Statement stmt = Conexao.getConexao().createStatement();
