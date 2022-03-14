@@ -8,6 +8,7 @@ public class Tabela {
 	
 	public static void criar(String usuario) throws SQLException {
 
+		Conexao.getConexao();
 		String criarDBC = "CREATE DATABASE IF NOT EXISTS controle_de_contas";
 		Statement stmt = Conexao.getConexao().createStatement();
 		stmt.execute(criarDBC);

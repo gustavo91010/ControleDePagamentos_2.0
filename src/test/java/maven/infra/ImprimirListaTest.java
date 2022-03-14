@@ -1,19 +1,20 @@
 package maven.infra;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import maven.boleto.Boleto;
+import maven.entidades.Boleto;
 
 public class ImprimirListaTest {
 
 	@Test
 	public void deveriaImprimirNaOrdemCorreta() {
-		Date hoje = new Date();
+//		Date hoje = new Date();
+		LocalDate hoje= LocalDate.now();
 		List<Boleto> boletosTest= new ArrayList<Boleto>();
 		boletosTest.add(new Boleto("Luz", 333.67, hoje));
 		boletosTest.add(new Boleto("agua", 213.67, hoje));

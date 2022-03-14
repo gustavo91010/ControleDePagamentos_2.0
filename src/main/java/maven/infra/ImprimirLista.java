@@ -1,8 +1,9 @@
 package maven.infra;
 
+import java.time.LocalDate;
 import java.util.List;
 
-import maven.boleto.Boleto;
+import maven.entidades.Boleto;
 
 public  class ImprimirLista {
 	
@@ -19,10 +20,19 @@ public  class ImprimirLista {
 			while(descricao.length()<8) {
 				descricao +=" ";
 			}
+			Boolean passouMesVencimento= b.getVencimento().getDayOfMonth()> LocalDate.now().getDayOfMonth();
+			Boolean passouDiaVencimento= b.getVencimento().getMonthValue()>=  LocalDate.now().getMonthValue();
 			
-			System.out.println("Id: " + id + " Descri: " + descricao + " " + v2 + ", venc: "
-					+ b.getVencimento());
-			id++;
+			 if( passouDiaVencimento&& passouMesVencimento ) {
+				 System.out.println ("Id: " + id + " Descri: " + descricao + " " + v2 + ", venc: "
+							+ b.getVencimento());
+			 }else {
+				 System.err.println("Id: " + id + " Descri: " + descricao + " " + v2 + ", venc: "
+							+ b.getVencimento());
+			 }
+			
+			 
+			 id++;
 		}
 
 	}
