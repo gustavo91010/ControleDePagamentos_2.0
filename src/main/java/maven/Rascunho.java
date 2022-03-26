@@ -1,30 +1,29 @@
 package maven;
 
+import java.sql.Date;
 import java.sql.SQLException;
 
-import maven.servicos.BoletosPagos;
+import maven.entidades.Boleto;
+import maven.servicos.AtualizarBoletos;
+
 
 public class Rascunho {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws SQLException {
+
+		AtualizarBoletos atlz= new AtualizarBoletos();
+		String tabelaTeste= "Rascunho";
+		String teste="uhadu";
+		Boleto boleto= new Boleto();
 		
-//BoletosPagos pg = new BoletosPagos();
-//pg.vizualizar("bob", 2);
-//		Date data;
-
-System.err.print("opa");
-
-//		LocalDate hoje = LocalDate.now();
-//		LocalDate hoje2 = LocalDate.of(hoje.getYear(), hoje.getMonth(), 1);
-//		LocalDate hoje3 = LocalDate.of(hoje.getYear(), 2, 1);
-//		LocalDate amanha = LocalDate.of(hoje.getYear(), 2, hoje3.lengthOfMonth());
-//
-//System.out.println(amanha);
-//	LocalDate date= LocalDate.of(2018, 8,21);
-//	System.out.println(date);	
-//	System.out.println(date.now());
-//	System.out.println(LocalDate.now().getYear());
-//		BoletosVencidos bvd= new BoletosVencidos();
-//		bvd.vizualizar("bob", 2);
+		
+//		System.out.println(LocalDate.now().getClass().getSimpleName().equalsIgnoreCase("LocalDate") );
+//		System.out.println(LocalDate.now().getClass().getSimpleName()=="LocalDate" );
+		
+		Date data= new Date(0);
+//		System.out.println(data.getClass().getSimpleName());
+		System.out.println(data);
+		
 		
 	}
 

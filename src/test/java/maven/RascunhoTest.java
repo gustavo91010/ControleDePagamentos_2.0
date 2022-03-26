@@ -2,18 +2,8 @@ package maven;
 
 import java.sql.Date;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 import org.junit.Ignore;
-
-import builder.BoletosBuilder;
-import maven.infra.Conexao;
-import maven.infra.ExcluirTabela;
-import maven.infra.Tabela;
-import maven.servicos.AdicionarBoletos;
-import maven.servicos.BoletosAPagar;
-import maven.servicos.BoletosVencidos;
-import maven.servicos.PagarBoletos;
 
 public class RascunhoTest {
 
