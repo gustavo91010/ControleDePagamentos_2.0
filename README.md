@@ -6,7 +6,8 @@ O projeto ainda esta em desenvolvimento.
 ### Tecnologias Utilizadas:
 - Linguagem java;
 - Maven;
-- -JDBC
+- JDBC;
+- MySql
 - JUnit 4;
 
 ### Instruções:
